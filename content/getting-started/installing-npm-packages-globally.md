@@ -17,10 +17,12 @@ To download packages globally, you simply use the command `npm install -g <packa
 npm install -g jshint
 ```
 
-If you get an EACCES error, you _should_ [fix your permissions](/getting-started/fixing-npm-permissions). You could also try using `sudo`, but this **should be avoided**:
+If you get an EACCES error, you should login as the root or Administrator user and try again.  You can use `sudo`, but it's important to use the `-H` option to avoid getting EACCES errors later.  If you forget to use `-H` with `sudo`, you may have to [fix your permissions](/getting-started/fixing-npm-permissions).
+
+Using `sudo` to install packages globally:
 
 ```
-sudo npm install -g jshint
+sudo -H npm install -g jshint
 ```
 
 If you get errors due to proxy configuration *(happens because `http_proxy` is usually set for current user, and `sudo` uses `root`)*, give parameter `-E` to `sudo`.
